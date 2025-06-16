@@ -7,18 +7,12 @@ export default function ActivitiesPage() {
   const { token } = useAuth();
   const { data } = useQuery("/activities", '1st');
   const { mutate } = useMutation('POST', '/activities', ['1st']);
-  // const { mutate: deleteActivity } = useMutation('DELETE', `/activities/${data.id}`, ['1st']);
 
   const forming = (formdata) => {
     const name = formdata.get('thename');
     const description = formdata.get('thedescription');
     mutate({ name, description });
   }
-
-  // const deleting = (activity) => {
-
-  //   useMutation('DELETE', `/activities/${data.id}`, ['1st']);
-  // }
 
   return (
     <>
