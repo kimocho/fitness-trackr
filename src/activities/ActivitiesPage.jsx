@@ -4,8 +4,8 @@ import useQuery from "../api/useQuery";
 
 export default function ActivitiesPage() {
   const { token } = useAuth();
-  const { data } = useQuery("/activities");
-  const { mutate } = useMutation('POST', '/activities');
+  const { data } = useQuery("/activities", '1st');
+  const { mutate } = useMutation('POST', '/activities', ['1st'])
   // const { mutate } = useMutation('DELETE', '/activities/id');
   const forming = (formdata) => {
     const name = formdata.get('thename');
